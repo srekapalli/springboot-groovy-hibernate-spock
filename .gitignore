@@ -1,0 +1,7 @@
+target
+build
+.lazybones
+.gradle
+*.iml
+*.ipr
+*.iws

@@ -1,0 +1,48 @@
+apply plugin: "groovy"
+apply plugin: "spring-boot"
+apply plugin: "application"
+
+sourceCompatibility = "1.6"
+targetCompatibility = "1.6"
+
+version = "${version}"
+group = "${group}"
+mainClassName = "com.github.srekapalli.sample.SampleApplication"
+
+buildscript {
+    ext {
+        springBootVersion = '1.2.1.RELEASE'
+    }    
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
+jar {
+    baseName = 'springboot-groovy-hibernate-spock'
+    version =  '1.0.0'
+}
+
+repositories {
+    mavenCentral()
+    maven { url 'http://oss.jfrog.org/artifactory/oss-snapshot-local/' }
+    maven { url 'http://repo.springsource.org/libs-release-remote' }
+}
+
+dependencies {
+    compile "org.codehaus.groovy:groovy"
+    compile "org.springframework.boot:spring-boot-starter-web"
+    compile "org.springframework.boot:spring-boot-starter-actuator"
+    compile "com.mangofactory:swagger-springmvc:1.0.0-SNAPSHOT"
+    compile "org.ajar:swagger-spring-mvc-ui:0.4"
+    compile 'org.webjars:swagger-ui:2.1.0-alpha.6'
+    compile 'javax.servlet:javax.servlet-api:3.1.0'
+    testCompile "org.springframework.boot:spring-boot-starter-test"
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.2.1'
+}
