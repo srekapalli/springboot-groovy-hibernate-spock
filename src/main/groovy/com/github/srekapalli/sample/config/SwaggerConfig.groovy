@@ -19,7 +19,6 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver
 import static org.ajar.swaggermvcui.SwaggerSpringMvcUi.*;
 
 @Configuration
-@EnableWebMvc
 @EnableSwagger
 @ComponentScan("com.github.srekapalli.sample.resources")
 class SwaggerConfig extends WebMvcConfigurerAdapter {

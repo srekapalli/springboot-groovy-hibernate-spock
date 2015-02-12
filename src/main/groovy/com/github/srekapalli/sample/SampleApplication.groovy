@@ -9,7 +9,6 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc
 
 @Configuration
 @EnableAutoConfiguration
-@EnableWebMvc
 @EnableSwagger
 @ComponentScan
 class SampleApplication {
